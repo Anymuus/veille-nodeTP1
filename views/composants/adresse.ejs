@@ -13,18 +13,18 @@
 	 for (elm of elmSave){
 		 elm.addEventListener('click', function(){
 		 
-			 let laLigne = this.parentNode.parentNode
+			 let infoAdr = this.parentNode.parentNode
 
-			 let id = laLigne.children[0].innerHTML
+			 let id = infoAdr.children[0].innerHTML
 
-			 let nom = laLigne.children[1].innerHTML
+			 let nom = infoAdr.children[1].innerHTML
 
-			 let prenom = laLigne.children[2].innerHTML
+			 let prenom = infoAdr.children[2].innerHTML
 
-			 let telephone = laLigne.children[3].innerHTML
+			 let telephone = infoAdr.children[3].innerHTML
 
-			 let courriel = laLigne.children[4].innerHTML
-			 
+			 let courriel = infoAdr.children[4].innerHTML
+
 			 let elmForm = document.getElementById('mon_formulaire')
 
 			 console.log(elmForm.tagName)
