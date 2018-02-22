@@ -1,9 +1,13 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
+
+#mon_formulaire{
+    visibility: hidden;
+}
 table{
-	margin: 40px auto;
-    border: 10px black solid;
+	margin: 20px auto;
+    border: 2px grey solid;
     border-collapse: collapse;
 }
 
@@ -14,6 +18,10 @@ td, th{
 
 th{
     background-color: rgb(195, 200, 255) ;
+}
+
+th a {
+    text-decoration: none;
 }
 
 
@@ -70,9 +78,8 @@ ul li a:hover{
     color: white;
 }
 
-.Accueil, .Adresses, .Ajouter, .Detruire, .Trier, .Sauver {
-    border-style: outset;
-    background-color: darkgrey;
-    text-decoration: none;
-    color: white;
+.Accueil:hover, .Adresses:hover, .Ajouter:hover, .Detruire:hover, .Trier:hover .Sauver:hover {
+    
+     background-color: rgb(195, 200, 255) ;
+    
 }
