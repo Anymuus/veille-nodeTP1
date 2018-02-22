@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
    if (err) return console.log(err)
    // transfert du contenu vers la vue index.ejs (renders)
    // affiche le contenu de la BD
-   res.render('gabarit_2.ejs', {adresse: resultat})
+   res.render('accueil.ejs')
    }) 
 
 })
@@ -33,7 +33,7 @@ app.get('/adresse', (req, res) => {
  if (err) return console.log(err)
  // transfert du contenu vers la vue index.ejs (renders)
  // affiche le contenu de la BD
- res.render('gabarit.ejs', {adresse: resultat})
+ res.render('adresse.ejs', {adresse: resultat})
  }) 
 })
 
@@ -42,11 +42,18 @@ app.post('/ajouter', (req, res) => {
  
  // Preparer l'output en format JSON
 
-console.log('la route /ajouter')
+ var oModification = {
+    nom: "",
+    prenom: "", 
+    telephone: "",
+    courriel: ""
+  }
+
+  console.log('la route /ajouter')
  db.collection('adresse').save(req.body, (err, result) => {
  if (err) return console.log(err)
  console.log('sauvegarder dans la BD')
- res.redirect('/')
+ res.redirect('/adresse')
  })
 
 
@@ -68,6 +75,27 @@ if (err) return console.log(err)
 
 app.post('/modifier', (req,res) => {
 
+  var util = require("util");
+  
+  var oModification = {
+    
+    "_id": ObjectID(req.body['_id']),
+
+    nom: req.body.nom,
+
+    prenom:req.body.prenom, 
+
+    telephone:req.body.telephone,
+
+    courriel:req.body.courriel
+  }
+
+
+  db.collection('adresse').save(oModif, (err, result) => {
+    if (err) return console.log(err)
+    console.log('modif dans la BD')
+    res.redirect('/adresses')
+  })
 
 
 })
