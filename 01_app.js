@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  console.log('la route route get / = ' + req.url)
+  console.log('accueil' + req.url)
    
    var cursor = db.collection('adresse').find().toArray(function(err, resultat){
    if (err) return console.log(err)
@@ -25,8 +25,8 @@ app.get('/', function (req, res) {
 
 })
 
-app.get('/adresse', (req, res) => {
- console.log('la route route get / = ' + req.url)
+app.get('/adresses', (req, res) => {
+ console.log('adresses = ' + req.url)
  
  var cursor = db.collection('adresse')
                 .find().toArray(function(err, resultat){
@@ -53,7 +53,7 @@ app.post('/ajouter', (req, res) => {
  db.collection('adresse').save(req.body, (err, result) => {
  if (err) return console.log(err)
  console.log('sauvegarder dans la BD')
- res.redirect('/adresse')
+ res.redirect('adresses')
  })
 
 
@@ -67,7 +67,7 @@ app.get('/detruire/:id', (req, res) => {
  .findOneAndDelete({"_id": ObjectID(req.params.id)}, (err, resultat) => {
 
 if (err) return console.log(err)
- res.redirect('/adresse')  // redirige vers la route qui affiche la collection
+ res.redirect('adresses')  // redirige vers la route qui affiche la collection
  })
 })
 
@@ -78,7 +78,7 @@ app.post('/modifier', (req,res) => {
   var util = require("util");
   
   var oModification = {
-    
+
     "_id": ObjectID(req.body['_id']),
 
     nom: req.body.nom,
@@ -91,10 +91,10 @@ app.post('/modifier', (req,res) => {
   }
 
 
-  db.collection('adresse').save(oModif, (err, result) => {
+  db.collection('adresse').save(oModification, (err, result) => {
     if (err) return console.log(err)
     console.log('modif dans la BD')
-    res.redirect('/adresses')
+    res.redirect('adresses')
   })
 
 
