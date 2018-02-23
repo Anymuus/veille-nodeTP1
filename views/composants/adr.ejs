@@ -1,3 +1,4 @@
+ 
 <% 
     let objOrdre = {
         "_id": "asc",
@@ -11,7 +12,7 @@
     }
 %>
 
-
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<table class="tableau">
 	 <tr>
@@ -22,6 +23,8 @@
 		 <th><a href='/trier/prenom/<%=objOrdre.prenom%>'>Prenom</a></th>
 
 		 <th><a href='/trier/telephone/<%=objOrdre.telephone%>'>Telephone</a></th>
+
+		 <th><a href='/trier/courriel/<%=objOrdre.courriel%>'>Courriel</a></th>
 
 		 <th>Ajouter</th>
 		    <th></th>
