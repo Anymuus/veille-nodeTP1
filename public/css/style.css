@@ -5,6 +5,11 @@
 #mon_formulaire{
     visibility: hidden;
 }
+
+#tableau{
+    display: flex;
+    justify-content:center;
+}
 table{
 	margin: 20px auto;
     border: 2px grey solid;
@@ -35,12 +40,12 @@ li{
 }
 
 nav{
-    margin: 20px auto;
+    display: flex;
+    justify-content:center;
+    font-size: 2em;
 }
 
-nav a{
-    font-size: 2em; 
-}
+
 
 h1, p{
     margin: 20px auto;
@@ -80,6 +85,6 @@ ul li a:hover{
 
 .Accueil:hover, .Adresses:hover, .Ajouter:hover, .Detruire:hover, .Trier:hover .Sauver:hover {
     
-     background-color: rgb(195, 200, 255) ;
+     background-color: rgb(125, 200, 255) ;
     
 }

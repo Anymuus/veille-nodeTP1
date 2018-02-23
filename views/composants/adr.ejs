@@ -4,7 +4,8 @@
         "_id": "asc",
         "nom": "asc",
         "prenom": "asc",
-        "telephone": "asc"
+        "telephone": "asc",
+        "courriel": "asc",
     }
     
     if(typeof cle !== "undefined" && cle){
@@ -26,8 +27,8 @@
 
 		 <th><a href='/trier/courriel/<%=objOrdre.courriel%>'>Courriel</a></th>
 
-		 <th>Ajouter</th>
-		    <th></th>
+		 <th>Sauver</th>
+		 <th>Supprimer</th>
 	 </tr>
 	 <% adresse.forEach(elm => {%>
 	 <tr>
@@ -38,9 +39,13 @@
 
 		 <td contenteditable='true'><%= elm.telephone %></td>
 
-		 <td><a href="/detruire/<%= elm._id %>"  class="Detruire">Supprimer</a></td>
+		 <td contenteditable='true'><%= elm.courriel %></td>
 
 		 <td><a class='Sauver' href="#">Sauver</a></td>
+
+		 <td><a href="/detruire/<%= elm._id %>"  class="Detruire">Supprimer</a></td>
+
+		 
 	 </tr>
 	 <% }) %>
 	 </table>
