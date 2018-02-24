@@ -68,7 +68,8 @@ domaine : [
                   'bell.ca',
                   'umontreal.ca',
                   'skillscanada.ca',
-                  'inforoutefpt.com']
+                  'inforoutefpt.com'
+                  ],
 
 ville : [
             'Montréal',
@@ -82,7 +83,7 @@ ville : [
             'Gaspé',
             'Hudson',
             'New York'
-            ]
+            ],
 
 prenom : [
                   'Luc',
