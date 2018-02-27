@@ -113,40 +113,15 @@ app.post('/modifier', (req,res) => {
     courriel:req.body.courriel
   }
 
-  app.post('/rechercher', (req, res) => {
-    let p = {};
-  if(req.body.recherche != ""){
-    switch(req.body.cle){
-      case "_id":
-        try{
-          p = {"_id":ObjectID(req.body.recherche)};
-        }catch(e){
-          p = {};
-        }
-        break;
-      case "nom":
-        p = {nom: req.body.recherche};
-        break;
-      case "prenom":
-        p = {prenom: req.body.recherche};
-        break;
-      case "courriel":
-        p = {courriel: req.body.recherche};
-        break;
-      case "telephone":
-        p = {telephone: req.body.recherche};
-        break;
-      default:
-        break;
-    }
-  }
-
-  collection.find(p).toArray((err, result) => {
+  app.post('/recherche', (req, res) => {
+  console.log('allo');
+  let recherche = req.body.recherche;
+  console.log("recherche = " + recherche);
+  db.collection('adresse').find({$or : [{nom:req.body.recherche},{prenom:req.body.recherche}]}).toArray(function(err, resultat) {
     if (err) return console.log(err);
-    //affiche les membres trouves par la recherche
-    res.render('adresse.ejs', {membres: result, cle:"", ordre:""});
-  });
-
+    console.log('util = ' + util.inspect(resultat));
+    res.render('gabarit.ejs', {adresse: resultat});
+  })
 
 })
 
