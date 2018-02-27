@@ -3,6 +3,7 @@ const bodyParser= require('body-parser')
 const MongoClient = require('mongodb').MongoClient // le pilote MongoDB
 const ObjectID = require('mongodb').ObjectID
 const fs = require("fs");
+const peupler = require("./mes_modules/peupler");
 var app = express();
 var util = require("util");
 app.set("view engine", "ejs")

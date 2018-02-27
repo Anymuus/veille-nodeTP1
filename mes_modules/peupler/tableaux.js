@@ -15,9 +15,7 @@ let t = {
       }
 */
 
-}
-
-let tableaux = {
+ let tableaux = {
 
 
    nom : [ 
@@ -71,21 +69,13 @@ domaine : [
                   'inforoutefpt.com'
                   ],
 
-ville : [
-            'Montréal',
-            'Québec',
-            'Saskatshewan',
-            'Calgary',
-            'Edmonton',
-            'Laval',
-            'Ottawa',
-            'Gatineau',
-            'Gaspé',
-            'Hudson',
-            'New York'
+ prefixeTel:[
+            '514',
+            '438',
+            '450'
             ],
 
-prenom : [
+ prenom : [
                   'Luc',
                   'Éric',
                   'François',
@@ -124,7 +114,7 @@ prenom : [
                   'Coralie',
                   'Pénéloppe',
                   'Charlotte'
-                    ]
+               ]
 }
 
 module.exports = tableaux;
